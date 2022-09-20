@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using System.Text;
 
 namespace Student;

@@ -17,4 +17,21 @@ public class StudentTests{
 
         ouput.Should().Be("{Id: 1} {Given name: Freddo} {SurName: Fredson} {Status: } {Startdate: 01/12/2000 00.00.00} {Enddate: 01/12/2005 00.00.00} {Graduationdate: 01/12/2005 00.00.00} ");
     }
+    
+    [Fact]
+    public void TestImmutableStudentTostring()
+    {
+        // Given
+        ImmutableStudent immutableStudent = new ImmutableStudent{id =  1, GivenName = "Freddo",
+         StartDate = new DateTime(2000, 12, 01),
+         SurName = "Fredson", 
+         EndDate = new DateTime(2005,12,1),
+         GraduationDate = new DateTime(2005,12,1) };
+              
+        
+        // When
+        var output = immutableStudent.ToString();
+        // Then
+        output.Should().Be("ImmutableStudent { id = 1, GivenName = Freddo, SurName = Fredson, Status = , StartDate = 01/12/2000 00.00.00, EndDate = 01/12/2005 00.00.00, GraduationDate = 01/12/2005 00.00.00 }");
+    }
 }
