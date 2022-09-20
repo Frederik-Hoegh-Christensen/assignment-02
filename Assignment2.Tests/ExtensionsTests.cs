@@ -43,4 +43,31 @@ public class ExtensionsTests
         // Assert
         result.Should().BeEquivalentTo(new[] { 4, 1992, 2032 });
     }
+
+
+    [Fact]
+    public void Check_If_Uri_Is_Secure()
+    {
+        // Arrange
+        Uri uri = new Uri("https://stackoverflow.com/questions/20679016/how-to-check-if-a-given-url-is-http-or-https-in-c-sharp");
+
+        // Act
+        var result = uri.IsSecure();
+
+        // Assert
+        result.Should().BeTrue();
+    }
+
+    [Fact]
+    public void Count_Words_In_String()
+    {
+        // Arrange
+        string temp = "There should be five words";
+
+        // Act
+        var result = temp.WordCount();
+
+        // Assert
+        result.Should().Be(5);
+    }
 }
