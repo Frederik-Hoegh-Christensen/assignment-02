@@ -1,7 +1,7 @@
 using System.ComponentModel.Design;
 using System.Text;
 
-namespace Student;
+namespace Assignment2;
 
 public class Student{
 
@@ -14,18 +14,18 @@ public class Student{
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public DateTime GraduationDate { get; set; }
-    public Enum Status { get => getStatus(); }
+    public Enum Status { get => getStatus(DateTime.Now, this); }
 
-    public Enum getStatus (){
-        if (DateTime.Today < this.StartDate)
+    public Enum getStatus (DateTime now, Student s){
+        if (now < this.StartDate)
         {
             return StatusEnum.New;
 
-        } else if(this.StartDate < DateTime.Today){
+        } else if(this.StartDate < now){
         
-            if(DateTime.Today < this.EndDate){
+            if(now < this.EndDate){
                 return StatusEnum.Active;
-            } else if(this.EndDate < DateTime.Today && this.EndDate < this.GraduationDate){
+            } else if(this.EndDate < now && this.EndDate < this.GraduationDate){
                 return StatusEnum.Dropout;
             } 
             
@@ -77,6 +77,7 @@ public class Student{
     
 
 }
+public record ImmutableStudent(int Id, string GivenName, string SurName, DateTime StartDate, DateTime EndDate, DateTime GraduationDate);
 
 }
 

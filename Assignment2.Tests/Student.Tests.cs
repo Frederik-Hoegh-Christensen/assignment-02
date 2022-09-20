@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestPlatform.Utilities;
 
-namespace Student.Tests;
+namespace Assignment2.Tests;
 
 public class StudentTests{
     [Fact]
