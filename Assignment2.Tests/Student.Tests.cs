@@ -38,4 +38,6 @@ public class StudentTests{
         output.Should().Be("Freddo");
         //output.Should().Be("ImmutableStudent { id = 1, GivenName = Freddo, SurName = Fredson, Status = , StartDate = 01/12/2000 00.00.00, EndDate = 01/12/2005 00.00.00, GraduationDate = 01/12/2005 00.00.00 }");
     }
+
+    
 }

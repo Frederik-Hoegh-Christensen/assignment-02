@@ -77,7 +77,8 @@ public class Student{
     
 
 }
-public record ImmutableStudent(int Id, string GivenName, string SurName, DateTime StartDate, DateTime EndDate, DateTime GraduationDate);
 
 }
+
+
 
