@@ -5,13 +5,33 @@ namespace Student;
 
 public class Student{
 
+    
+    
     public int id {get; init;}
     public String GivenName { get; set; } = null!;
     public String SurName { get; set; } =null!;
-    public Enum Status {get;} = null!;
+    
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public DateTime GraduationDate { get; set; }
+    public Enum Status { get => getStatus(); }
+
+    public Enum getStatus (){
+        if (DateTime.Today < this.StartDate)
+        {
+            return StatusEnum.New;
+
+        } else if(this.StartDate < DateTime.Today){
+        
+            if(DateTime.Today < this.EndDate){
+                return StatusEnum.Active;
+            } else if(this.EndDate < DateTime.Today && this.EndDate < this.GraduationDate){
+                return StatusEnum.Dropout;
+            } 
+            
+        }
+        return StatusEnum.Graduated;
+    }
 
 
 
@@ -45,15 +65,18 @@ public class Student{
         
     }
 
-}
-
-public enum Status
+    public enum StatusEnum
 {
-    New = 1,
-    Active = 2,
-    Dropout = 3,
-    Graduated = 4,
+
+    
+    New,
+    Active,
+    Dropout,
+    Graduated,
 
     
 
 }
+
+}
+

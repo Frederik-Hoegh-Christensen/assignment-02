@@ -4,12 +4,12 @@ using System.Text;
 
 public record ImmutableStudent{
     public int id {get; init;}
-    public String GivenName { get; set; } = null!;
-    public String SurName { get; set; } =null!;
+    public String GivenName { get; init; } = null!;
+    public String SurName { get; init; } =null!;
     public Enum Status {get;} = null!;
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public DateTime GraduationDate { get; set; }
+    public DateTime StartDate { get; init; }
+    public DateTime EndDate { get; init; }
+    public DateTime GraduationDate { get; init; }
 
     
 
