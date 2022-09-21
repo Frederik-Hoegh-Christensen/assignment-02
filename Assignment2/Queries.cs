@@ -108,7 +108,7 @@ public class Queries
     {
         WizardCollection wizards = WizardCollection.Create();
 
-        var wizardNames = wizards.OrderByDescending(a => a.Name).OrderByDescending(a => a.Creator).Select(a => a.Name);
+        var wizardNames = wizards.OrderByDescending(a => a.Creator).ThenBy(a => a.Name).Select(a => a.Name);
 
         return wizardNames.ToList();
 
