@@ -15,7 +15,7 @@ public class StudentTests{
         var ouput = st.ToString();
         // Then
 
-        ouput.Should().Be("{Id: 1} {Given name: Freddo} {SurName: Fredson} {Status: Dropout} {Startdate: 01/12/2000 00.00.00} {Enddate: 01/12/2005 00.00.00} {Graduationdate: 01/12/2006 00.00.00} ");
+        ouput.Should().Be("{Id: 1} {Given name: Freddo} {SurName: Fredson} {Status: Dropout} {Startdate: " + new DateTime(2000, 12, 01).ToString() + "} {Enddate: " + new DateTime(2005, 12, 1).ToString() + "} {Graduationdate: " + new DateTime(2006, 12, 1).ToString() + "} ");
         }
     
     [Fact]
