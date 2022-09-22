@@ -25,7 +25,7 @@ public class ExtensionsTests
         int[] ys = { 1, 2, 3, 7, 14, 15, 42, 43, 44, 45, 315, 514, 234332 };
 
         // Act
-        var result = ys.Divisble_By_7_Greater_Than_42();
+        var result = ys.Where(x => x % 7 == 0).Where(x => x > 42);
 
         // Assert
         result.Should().BeEquivalentTo(new[] { 315, 234332});
@@ -38,7 +38,7 @@ public class ExtensionsTests
         int[] ys = {1, 2, 3, 4, 5, 1992, 2001, 2022, 2032, 2141};
 
         // Act
-        var result = ys.Find_Leap_Years();
+        var result = ys.Where(x => DateTime.IsLeapYear(x));
 
         // Assert
         result.Should().BeEquivalentTo(new[] { 4, 1992, 2032 });
